@@ -25,11 +25,17 @@ class Renault {
 		else {return 1200}
 	}
 }
+class AutoEspecial{
+	var property color 
+	var property capacidad
+	var property velocidad
+	var property peso
+}
 
 object trafic{
 	var property color = "blanco"
 	var property interior
-	var property motor
+	var property motor 
 	method capacidad(){return interior.capacidad()}
 	method velocidad(){return motor.velocidad()}
 	method peso() {return interior.peso() + motor.peso() + 4000}

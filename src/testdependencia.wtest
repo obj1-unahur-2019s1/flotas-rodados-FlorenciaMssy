@@ -1,0 +1,36 @@
+import rodados.*
+import dependencias.*
+
+test "test dependencia deporte" {
+	var dependenciaDeportes = new Dependencia()
+	dependenciaDeportes.empleados(45)
+	var cachito = new Corsa()
+	cachito.color("Rojo")
+	var corsaAzul = new Corsa()
+	corsaAzul.color("Azul")
+	var corsaVerde = new Corsa()
+	corsaVerde.color("Verde")
+	var kwid = new Renault()
+	kwid.tieneTanque(true)
+	var autoEspecial = new AutoEspecial()
+	autoEspecial.capacidad(5)
+	autoEspecial.velocidad(160)
+	autoEspecial.peso(1200)
+	autoEspecial.color("Beige")
+	
+	
+	dependenciaDeportes.agregarAFlota(cachito)
+	dependenciaDeportes.agregarAFlota(corsaAzul)
+	dependenciaDeportes.agregarAFlota(corsaVerde)
+	dependenciaDeportes.agregarAFlota(kwid)
+	dependenciaDeportes.agregarAFlota(autoEspecial)
+
+	assert.equals(6450, dependenciaDeportes.pesoTotalFlota())
+	
+	//assert.equals(true, dependenciaDeportes.estaBienEquipada())
+	
+
+	assert.equals(4, dependenciaDeportes.capacidadTotalEnColor("Azul"))
+	
+	assert.equals("Beige", dependenciaDeportes.colorDelRodadoMasRapido())
+	}
