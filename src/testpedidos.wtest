@@ -1,0 +1,17 @@
+import rodados.*
+import dependencias.*
+import modelopedidos.*
+
+test "pedidos" {
+
+	var cachito = new Corsa(color = "rojo")
+	var viaje = new Pedido(coloresIncompatibles = #{"azul","negro"}, distancia = 960, tiempoMaximo = 8, pasajeros = 4)
+	
+	assert.equals(true, viaje.puedeSatisfacer(cachito))
+	
+	viaje.coloresIncompatibles().add("rojo")
+	assert.equals(false, viaje.puedeSatisfacer(cachito))
+	
+
+
+}

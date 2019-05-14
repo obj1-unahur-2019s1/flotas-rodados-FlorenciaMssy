@@ -27,10 +27,14 @@ test "test dependencia deporte" {
 
 	assert.equals(6450, dependenciaDeportes.pesoTotalFlota())
 	
-	//assert.equals(true, dependenciaDeportes.estaBienEquipada())
+	assert.equals(true, dependenciaDeportes.estaBienEquipada())
 	
 
 	assert.equals(4, dependenciaDeportes.capacidadTotalEnColor("Azul"))
 	
 	assert.equals("Beige", dependenciaDeportes.colorDelRodadoMasRapido())
+	
+	assert.equals(true, dependenciaDeportes.esGrande())
+	
+	assert.equals(25, dependenciaDeportes.capacidadFaltante())
 	}
