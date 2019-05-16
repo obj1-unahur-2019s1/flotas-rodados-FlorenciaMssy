@@ -17,7 +17,10 @@ method esGrande() {return empleados>=40 && flota.size()>5}
 method totalPasajeros() {return pedidos.sum({pedido => pedido.pasajeros()})}
 method agregarPedido(pedido) {pedidos.add(pedido)}
 method quitarPedido(pedido) {pedidos.remove(pedido)}
-method noSatisfechos() {return not pedidos.filter({pedido => pedido.puedeSatisfacer()})}
-
-
+method pedidosNoSatisfechos() {return not pedidos.filter({pedido => self.lopuedeSatisfacer(pedido)})}
+method lopuedeSatisfacer(pedido) {return flota.any({rodado => pedido.puedeSatisfacer(rodado)})}
+method esColorRechazado(color){return pedido.all({pedido => pedido.coloresIncompatibles().contains(color)})}
+method relajarTodosLosPedidos(){pedidos.forEach({pedido =>pedido.relajar()})
+	}
 }
+
